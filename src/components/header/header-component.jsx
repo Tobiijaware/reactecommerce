@@ -21,7 +21,7 @@ import {
 
 
 
-export const Header = ({ currentUser, hidden, signOutStart }) => (
+export const Header = ({ currentUser, hidden }) => (
   <HeaderContainer>
     <LogoContainer to='/'>
       <Logo className='logo' />
@@ -30,7 +30,7 @@ export const Header = ({ currentUser, hidden, signOutStart }) => (
      
       <OptionLink to='/shop'>SHOP</OptionLink>
       {currentUser ? (
-        <OptionLink as='div' onClick={signOutStart}>
+        <OptionLink as='div' onClick={() => auth.signOut()}>
           SIGN OUT
         </OptionLink>
       ) : (
