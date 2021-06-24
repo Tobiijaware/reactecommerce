@@ -1,4 +1,4 @@
-import './App.css';
+//import './App.css';
 import { Switch , Route, Redirect} from 'react-router-dom';
 import HomePage from './pages/homepage.component';
 import ShopPage from './pages/shop/shop.component.jsx';
@@ -6,7 +6,7 @@ import Header from './components/header/header-component.jsx';
 import SignInAndSignUpPage from './pages/signin-signup/signin-signup.component.jsx';
 import CheckoutPage from './pages/checkout/checkout.component.jsx';
 
-
+import { GlobalStyle } from './global.styles';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.util';
 import React from 'react';
@@ -48,6 +48,7 @@ class App extends React.Component {
   render(){
     return (
       <div>
+        <GlobalStyle />
         <Header/>
           <Switch> 
             <Route exact path='/' component={HomePage} />
